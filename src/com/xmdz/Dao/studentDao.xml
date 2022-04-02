@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmdz.Dao.StudentDao">
+<!--    <select id="selectBlog" resultType="Blog">-->
+<!--        select * from Blog where id = #{id}-->
+<!--    </select>-->
+    <select id="getById" parameterType="java.lang.String" resultType="com.xmdz.domain.student">
+      select * from t_student where id=#{id};
+    </select>
+
+    <insert id="Insert" >
+        insert into t_student(id,name,age) values(#{id},#{name},#{age});
+
+    </insert>
+
+    <select id="getAll" resultType="com.xmdz.domain.student">
+      select * from t_student;
+    </select>
+
+</mapper>
